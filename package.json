@@ -1,11 +1,11 @@
 {
   "name": "diir",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A cli navigation tool with functions",
   "homepage": "https://github.com/jsmithdev/diir#readme",
   "main": "index.js",
   "bin": {
-    "diir": "cli.js"
+    "diir": "./bin/cli.js"
   },
   "dependencies": {
     "cli-spinners": "^2.2.0",
