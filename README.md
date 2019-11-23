@@ -6,16 +6,19 @@
 npm i -g diir
 ```
 
-Lists directories where you run it
+Lists sub-directories based on where you run
 
-Fuzzy search to navigate to sub directories
+Fuzzy search to navigate to deeper sub directories or options
 
-Added to directory choices are:
-Back- to go back
-Functions- to run functions
+Options include:
 
-Functions include
-Code - open in vs code
-Quit - quit diir 
+- Back - to go back
+
+- Functions - to run functions
+
+Functions include:
+
+- Code - open in vs code
+- Quit - quit diir
 
 Still WIP @0.0.2
