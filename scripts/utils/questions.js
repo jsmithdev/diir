@@ -12,12 +12,12 @@ module.exports = {
         source: (answers, input) => search(answers, input, choices.diir())
     }],
     
-    funcs: [{
+    functions: [{
         name: 'response',
         message: `Functions`,
         type: 'autocomplete',
         pageSize: 10,
-        source: (answers, input) => search(answers, input, choices.funcs())
+        source: (answers, input) => search(answers, input, choices.functions )
     }],
 }
 
