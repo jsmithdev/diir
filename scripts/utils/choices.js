@@ -1,11 +1,9 @@
 const fs = require('fs')
-const util = require('util')
-
-//const readdir = fs.readdirSync
+const { names } = require('./functions')
 
 module.exports = {
     diir,
-    funcs,
+    functions: names,
 }
 
 function diir() {
@@ -13,20 +11,11 @@ function diir() {
     const contents = fs.readdirSync( process.env.CWD )
         .filter(item => !item.includes('.'))
     
-    // todo add <-- Back and Actions here
     //console.log(contents)
 
     return [
-        process.env.SYM_BACK,
         process.env.SYM_FUNC,
+        //process.env.SYM_SEP,
         ...contents
     ];
-}
-
-
-function funcs () {
-    return [
-        'Code',
-        'Quit',
-    ]
 }
