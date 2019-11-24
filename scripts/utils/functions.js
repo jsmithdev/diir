@@ -1,21 +1,33 @@
 
 const vscode = require('./vscode')
 
-module.exports = {
-    handleFuncs,
-}
+const names = [
+    process.env.SYM_BACK,
+    'Code',
+    'Quit',
+]
 
     
-async function handleFuncs(name){
-    console.log('handleFuncs ', name)
-    if(name === 'Code'){
-        // open in vs code
-        console.log('open in vs code todo')
-        const out = await vscode.open(process.env.CWD)
+async function handleFunctions(name){
 
-        return out
+    //console.log('handleFunctions ', name)
+
+    if(name === 'Code'){
+        return await vscode.open(process.env.CWD)
     }
-    if(name === 'Quit'){
+    
+    else if(name === process.env.SYM_BACK){
+        return process.env.CWD = process.env.CWD
+            .substring(0, process.env.CWD.lastIndexOf('/'))
+    }
+
+    else if(name === 'Quit'){
         return 'EXIT'
     }
+}
+
+
+module.exports = {
+    names,
+    handleFunctions,
 }
