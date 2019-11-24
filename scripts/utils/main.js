@@ -3,7 +3,7 @@ const inquirer = require('inquirer')
 inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'))
 
 const questions = require('./questions')
-const {handleFuncs} = require('./functions')
+const {handleFunctions} = require('./functions')
 
 module.exports = {
     main,
@@ -13,20 +13,16 @@ async function main(){
 
     const answer = await inquirer.prompt( questions.main )
 
-    console.log('RESPONSE: '+answer.response)
+    //console.log('RESPONSE: '+answer.response)
 
-    if(answer.response === process.env.SYM_BACK){
-        process.env.CWD = process.env.CWD
-            .substring(0, process.env.CWD.lastIndexOf('/'))
-    }
 
-    else if(answer.response === process.env.SYM_FUNC){
+    if(answer.response === process.env.SYM_FUNC){
         
-        const { response } = await inquirer.prompt( questions.funcs )
-        const func_response = await handleFuncs(response)
+        const { response } = await inquirer.prompt( questions.functions )
+        const func_response = await handleFunctions(response)
 
         if(func_response === 'EXIT'){
-            return console.log('later ;)')
+            return console.log('\n')
         }
 
     }
