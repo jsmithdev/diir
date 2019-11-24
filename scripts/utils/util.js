@@ -6,13 +6,8 @@ module.exports = {
 }
 
 
-function goBack (value) {
-    return value === '<- Cancel'
-}
 
-async function search(answers, input, array) {
-
-    input = input || '';
+async function search(answers, input = '', array) {
 
     const fuzzyResult = fuzzy.filter(input, array)
 
