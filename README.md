@@ -6,9 +6,11 @@
 npm i -g diir
 ```
 
+📌 Still a WIP @0.0.3
+
 Lists sub-directories based on where you run
 
-Fuzzy search to navigate to deeper sub directories or Functions
+Fuzzy search to navigate to deeper sub directories or run Functions
 
 Functions include:
 
@@ -16,4 +18,8 @@ Functions include:
 - Code - open directory in vs code
 - Quit - quit diir
 
-Still WIP @0.0.3
+Functions
+<img src="https://i.imgur.com/tQWx2fx.png" />
+
+Directory Navigation
+<img src="https://i.imgur.com/KKUHgsB.png" />
