@@ -1,6 +1,6 @@
 {
   "name": "diir",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A cli navigation tool with functions",
   "homepage": "https://github.com/jsmithdev/diir#readme",
   "main": "index.js",
