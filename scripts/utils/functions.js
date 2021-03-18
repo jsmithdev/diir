@@ -3,6 +3,10 @@ const path = require('path')
 
 const vscode = require('./vscode')
 
+const {
+    openOrg,
+} = require('./sfdx')
+
 const storage = require('json-store')
 
 const store = storage(path.join(process.env.HOME_DIR, '.diir.json'))
@@ -10,6 +14,7 @@ const store = storage(path.join(process.env.HOME_DIR, '.diir.json'))
 
 const {
     SYM_CODE,
+    SYM_OPEN_ORG,
     SYM_UP,
     SYM_BACK,
     SYM_EXIT,
@@ -20,9 +25,10 @@ const {
 const names = [
     SYM_BACK,
     SYM_CODE,
+    SYM_OPEN_ORG,
     SYM_UP,
-    SYM_START_DIR,
     SYM_EXIT,
+    SYM_START_DIR,
 ];
     
 async function handleFunctions(name){
@@ -48,6 +54,10 @@ async function handleFunctions(name){
 
     else if(name === SYM_START_DIR){
         return await store.set('START_DIR', process.env.CWD)
+    }
+
+    else if(name === SYM_OPEN_ORG){
+        return await openOrg(process.env.CWD)
     }
 }
 

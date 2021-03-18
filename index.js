@@ -13,6 +13,7 @@ process.env.CWD = START_DIR ? START_DIR : process.env.INIT_DIR
 
 process.env.SYM_FUNC = '🔧 Functions'
 process.env.SYM_CODE = '⌨   Code'
+process.env.SYM_OPEN_ORG = '🌏  SFDX Open Org'
 process.env.SYM_BACK = '👈  Back'
 process.env.SYM_UP = '☝  Up'
 process.env.SYM_EXIT = '🏁  Exit'
