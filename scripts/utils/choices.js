@@ -8,10 +8,16 @@ module.exports = {
 
 function diir() {
 
-    const contents = fs.readdirSync( process.env.CWD )
+    const { CWD } = process.env;
+
+    const contents = fs.readdirSync( CWD )
         .filter(item => !item.includes('.'))
-    
-    //console.log(contents)
+        .map(name => ({
+            name,
+            time:fs.statSync(`${CWD}/${name}`).mtime.getTime()
+        }))
+        .sort((a, b) => b.time - a.time)
+        .map(dir =>  dir.name)
 
     return [
         process.env.SYM_FUNC,
