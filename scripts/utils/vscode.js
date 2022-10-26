@@ -20,10 +20,7 @@ async function open (path) {
 
     const spinner = ora('Opening in VS Code...').start();
 
-    const { stdout } = await exec(`code ${path}`)
+    await exec(`code ${path}`)
     
-    spinner.succeed(`Opened ${path} \n ${stdout}`)
-    console.log('\n')
-
-    return stdout
+    spinner.succeed(`Opened ${path}`)
 }
