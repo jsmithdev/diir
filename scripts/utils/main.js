@@ -22,7 +22,7 @@ async function main(){
         const func_response = await handleFunctions(response)
 
         if(func_response === 'EXIT'){
-            return console.log('\n')
+            return console.log('\n Bye, have a wonderful time! 👋\n')
         }
 
     }
