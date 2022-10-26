@@ -24,9 +24,9 @@ const {
 // order shown to user
 const names = [
     SYM_BACK,
+    SYM_UP,
     SYM_CODE,
     SYM_OPEN_ORG,
-    SYM_UP,
     SYM_EXIT,
     SYM_START_DIR,
 ];
