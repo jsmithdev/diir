@@ -1,15 +1,15 @@
-process.env.HOME_DIR = require('os').homedir()
+process.env.DIR_HOME = require('os').homedir()
 
 const storage = require('json-store')
 const path = require('path')
 
-const store = storage(path.join(process.env.HOME_DIR, '.diir.json'))
+const store = storage(path.join(process.env.DIR_HOME, '.diir.json'))
 
-const START_DIR = store.get('START_DIR')
+const DIR_START = store.get('DIR_START') || store.get('START_DIR')
 
-process.env.INIT_DIR = process.env.PWD
+process.env.DIR_INIT = process.env.PWD
 
-process.env.CWD = START_DIR || process.env.INIT_DIR
+process.env.CWD = DIR_START || process.env.DIR_INIT
 
 process.env.SYM_FUNC = '🔧 Functions'
 process.env.SYM_CODE = '⌨   Code'

@@ -9,7 +9,7 @@ const {
 
 const storage = require('json-store')
 
-const store = storage(path.join(process.env.HOME_DIR, '.diir.json'))
+const store = storage(path.join(process.env.DIR_HOME, '.diir.json'))
 
 
 const {
@@ -53,7 +53,7 @@ async function handleFunctions(name){
     }
 
     else if(name === SYM_START_DIR){
-        return store.set('START_DIR', process.env.CWD)
+        return store.set('DIR_START', process.env.CWD)
     }
 
     else if(name === SYM_OPEN_ORG){
