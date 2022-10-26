@@ -49,15 +49,15 @@ async function handleFunctions(name){
     }
 
     else if(name === SYM_CODE){
-        return await vscode.open(process.env.CWD)
+        return vscode.open(process.env.CWD)
     }
 
     else if(name === SYM_START_DIR){
-        return await store.set('START_DIR', process.env.CWD)
+        return store.set('START_DIR', process.env.CWD)
     }
 
     else if(name === SYM_OPEN_ORG){
-        return await openOrg(process.env.CWD)
+        return openOrg(process.env.CWD)
     }
 }
 
