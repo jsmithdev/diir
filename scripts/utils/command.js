@@ -13,23 +13,23 @@ async function handleCommand(command){
     const child = promise.child; 
     
     child.stdout.on('data', function(data) {
-        console.log('stdout: ' + data);
+        //console.log('stdout: ' + data);
     });
     child.stderr.on('data', function(data) {
-        console.log('stderr: ' + data);
+        //console.log('stderr: ' + data);
     });
     child.on('close', function(code) {
-        console.log('closing code: ' + code);
+        console.log(`\nCommand Output (code ${code}) \n-----------------------`);
     });
     
     // i.e. can then await for promisified exec call to complete
     const { stdout, stderr } = await promise;
 
     if(stderr){
-        console.log('ERROR: ', stderr)
+        console.log('\n', stderr)
     }
     if(stdout){
-        console.log('OUTPUT: ', stdout)
+        console.log('\n', stdout)
     }
 
     return 'EXIT'
