@@ -5,7 +5,8 @@ const path = require('path');
 
 const mkdir = util.promisify(fs.mkdir)
 
-//const spawn = require('child_process').spawn
+//const spawn_normal = require('child_process').spawn
+//const spawn = util.promisify(spawn_normal)
 const exec_normal = require('child_process').exec
 const exec = util.promisify(exec_normal)
 

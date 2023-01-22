@@ -17,6 +17,7 @@ process.env.SYM_OPEN_ORG = '🌏  SFDX Open Org'
 process.env.SYM_BACK = '❌  Cancel'
 process.env.SYM_UP = '👈  Back a Directory'
 process.env.SYM_EXIT = '🏁  Exit'
+process.env.SYM_CODE_EXIT = `${process.env.SYM_CODE} && ${process.env.SYM_EXIT}`
 
 process.env.SYM_START_DIR = '📌  Set as Default Directory'
 process.env.SYM_COMMAND = '✏️  Run a Command'

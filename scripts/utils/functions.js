@@ -19,6 +19,7 @@ const store = storage(path.join(process.env.DIR_HOME, '.diir.json'))
 
 const {
     SYM_CODE,
+    SYM_CODE_EXIT,
     SYM_OPEN_ORG,
     SYM_UP,
     SYM_BACK,
@@ -32,6 +33,7 @@ const names = [
     SYM_BACK,
     SYM_UP,
     SYM_CODE,
+    SYM_CODE_EXIT,
     SYM_COMMAND,
     SYM_OPEN_ORG,
     SYM_START_DIR,
@@ -56,7 +58,12 @@ async function handleFunctions(name){
     }
 
     else if(name === SYM_CODE){
-        return vscode.open(process.env.CWD)
+        await vscode.open(process.env.CWD)
+        return 0;
+    }
+    else if(name === SYM_CODE_EXIT){
+        await vscode.open(process.env.CWD)
+        return 'EXIT'
     }
 
     else if(name === SYM_START_DIR){
